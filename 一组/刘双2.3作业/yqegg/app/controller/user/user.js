@@ -55,8 +55,11 @@ class UserController extends Controller {
       }
        let res=await ctx.service.user.login(name,ctx.helper.help(pwd));
        let token=jwt.sign({...res[0]},this.app.config.keys,{expiresIn:'3h'});
-    //    console.log(res,"0000")
+       console.log(res,"0000")
        if(res.length>0){
+        //    window.localStorage.token=token;
+        //    window.localStorage.name=res[0].name;
+        //    window.localStorage.uid=res[0].uid;
         ctx.body={
             code:1,
             msg:'登录成功',
