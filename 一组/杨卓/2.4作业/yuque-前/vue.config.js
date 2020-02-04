@@ -1,0 +1,11 @@
+module.exports={
+    devServer:{
+        proxy:{//反向代理
+            '/api':{
+                target:"http://localhost:7001/",
+                changeOrigin:true,
+                pathRewrite:{"^/api":""}
+            }
+        }
+    }
+}
