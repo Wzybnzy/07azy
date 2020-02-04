@@ -31,12 +31,18 @@ const routes = [
     component:()=>import('../views/home/home.vue'),
     children:[
       {
-        path:"/file",
-        component:()=>import('../views/home/file/file.vue')
-      },
-      {
-        path:"/know",
-        component:()=>import('../views/home/know/know.vue')
+        path:"list",
+        component:()=>import('../views/home/list/list.vue'),
+        children:[
+          {
+            path:"file",
+            component:()=>import('../views/home/list/file/file.vue')
+          },
+          {
+            path:"know",
+            component:()=>import('../views/home/list/know/know.vue')
+          }
+        ]
       }
     ]
   },

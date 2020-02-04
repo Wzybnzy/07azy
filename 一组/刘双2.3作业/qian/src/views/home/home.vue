@@ -1,6 +1,10 @@
 <template>
   <div>
-      home
+    <div>
+      <router-view/>
+    </div>
+       <router-link to='/home/list'>列表</router-link>
+      
   </div>
 </template>
 
