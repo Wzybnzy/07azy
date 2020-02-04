@@ -41,6 +41,7 @@ class HomeController extends Controller {
           ctx.body = {
             code: 1,
             token,
+            uid:res[0].id,
             mes: '登录成功'
           }
         } else {
