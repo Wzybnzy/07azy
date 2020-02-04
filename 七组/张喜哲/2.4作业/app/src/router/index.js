@@ -14,6 +14,11 @@ const routes = [
         component: () => import('../views/register.vue'),
     },
     {
+        path: '/addknow',
+        name: 'addknow',
+        component: () => import('../views/addknow.vue'),
+    },
+    {
         path: '/home',
         name: 'home',
         component: () => import('../views/home/home.vue'),

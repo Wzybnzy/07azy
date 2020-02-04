@@ -50,6 +50,9 @@ export default {
             }else if(res.data.code == 1){
               localStorage.setItem('username',res.data.data.username)
               alert('登录成功')
+              localStorage.setItem('username',res.data.data.username)
+              localStorage.setItem('uid',res.data.data.id)
+              localStorage.setItem('token',res.data.token)
               this.$router.push('/home')
                this.flag==false
             }
