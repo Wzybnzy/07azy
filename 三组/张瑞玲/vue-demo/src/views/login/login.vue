@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import {login} from '@/api/api.js'
+import axios from 'axios'
+//import {login} from '@/api/api.js'
 export default {
   data() {
     return {
@@ -29,13 +30,17 @@ export default {
   methods: {
     async onSubmit(){
       let {username,password}=this.form
-      let res=await login({
-        username,
+      // let res = await axios.post('/api/login',{
+      //   name,
+      //   pwd
+      // });
+      let res=await axios.post('/api/login',{
+        username:username,
         password
       })
       if(res.data.code==1){
         this.$router.push({name:'file'})
-        window.localStorage.user=JSON.stringify(res.data.data)
+        window.localStorage.user=JSON.stringify({...res.data.data ,name})
       }else {
         this.show=true
         this.$message(res.data.msg)

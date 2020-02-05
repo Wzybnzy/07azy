@@ -10,7 +10,7 @@ class KnowController extends Controller {
             }
             return
         }
-        let res= await service.know.add(file_name, file_info,know_id, isshow, uid)
+        let res= await service.know.add(ctx.request.body)
         if(res.affectedRows==1){
             ctx.body={
                 msg:'添加成功',
@@ -66,6 +66,21 @@ class KnowController extends Controller {
             ctx.body={
                 msg:'修改失败',
                 code:2
+            }
+        }
+    }
+    async search(){
+        let {ctx,service} =this
+        let {search=''}=service.file.search(search)
+        if (res.length !==0){
+            ctx.body={
+                code:1,
+                data:res
+            }
+        }else{
+            ctx.body={
+                code:0,
+                msg:'搜索失败'
             }
         }
     }

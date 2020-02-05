@@ -10,7 +10,8 @@ class KnowController extends Controller {
             }
             return
         }
-        let res= await service.know.add(know_name,know_info,isshow,uid)
+        let res= await service.know.add(ctx.request.body)
+        console.log(res)
         if(res.affectedRows==1){
             ctx.body={
                 msg:'添加成功',
@@ -34,6 +35,7 @@ class KnowController extends Controller {
             return
         }
         let res= await service.know.del(id,uid)
+        console.log(res)
         if(res.affectedRows==1){
             ctx.body={
                 msg:'删除成功',
@@ -80,6 +82,7 @@ class KnowController extends Controller {
             return
         }
         let res =await service.know.list(uid)
+        console.log(res)
         ctx.body={
             code:1,
             data:res
