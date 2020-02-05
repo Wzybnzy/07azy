@@ -1,15 +1,13 @@
 <template>
-    <div>
-        详情
-    </div>
+  <div>
+    search
+  </div>
 </template>
-
 <script>
 export default {
-
+  
 }
 </script>
-
 <style>
-
+  
 </style>

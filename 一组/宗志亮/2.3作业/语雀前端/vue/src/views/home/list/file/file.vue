@@ -1,15 +1,13 @@
 <template>
-    <div>
-        关注
-    </div>
+  <div>
+    file
+  </div>
 </template>
-
 <script>
 export default {
-
+  
 }
 </script>
-
 <style>
-
+  
 </style>

@@ -1,30 +1,33 @@
-import axios from 'axios'
+import axios from 'axios';
 
-var httpAxios = axios.create();
+const request = axios.create();
+// Add a request interceptor
+request.interceptors.request.use(
+    function(config) {
+        // Do something before request is sent
+        return {
+            ...config,
+            headers: {
+                ...config.headers,
+                'authorization': window.localStorage.token,
+            },
+        };
+    },
+    function(error) {
+        // Do something with request error
+        return Promise.reject(error);
+    }
+);
 
-// 添加请求拦截器
-httpAxios.interceptors.request.use(function (config) {
-    // 在发送请求之前做些什么
-    console.log(config,'***********')
-    return {
-        ...config,
-        headers:{
-            ...config.headers,
-            'authorization':window.localStorage.token
-        }
-    };
-  }, function (error) {
-    // 对请求错误做些什么
-    return Promise.reject(error);
-  });
-
-// 添加响应拦截器
-httpAxios.interceptors.response.use(function (response) {
-    // 对响应数据做点什么
-    return response;
-  }, function (error) {
-    // 对响应错误做点什么
-    return Promise.reject(error);
-  });
-
-  export default httpAxios 
+// Add a response interceptor
+request.interceptors.response.use(
+    function(response) {
+        // Do something with response data
+        return response;
+    },
+    function(error) {
+        // Do something with response error
+        return Promise.reject(error);
+    }
+);
+export default request;
