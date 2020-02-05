@@ -1,0 +1,37 @@
+const routes = [
+    {
+      path:"/",
+      redirect:"/login"
+    },
+    {
+      path:"/login",
+      component:()=>import("@/views/login/login.vue")//promise函数
+    },
+    {
+      path:"/register",
+      component:()=>import("@/views/register/register.vue")
+    },
+    {
+      path:"/home",
+      component:()=>import("@/views/home/home.vue"),
+      redirect:"/home/list",
+      children:[
+        {
+          path:"list",
+          component:()=>import("../views/home/list/list.vue"),
+          redirect:"/home/list/file",
+          children:[
+            {
+              path:"file",
+              component:()=>import("../views/home/list/file/file.vue")
+            },
+            {
+              path:"know",
+              component:()=>import("../views/home/list/know/know.vue")
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  export default routes;
