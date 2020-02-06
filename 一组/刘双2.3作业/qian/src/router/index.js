@@ -44,7 +44,8 @@ const routes = [
           }
         ]
       }
-    ]
+    ],
+    redirect:'/home/list'
   },
   {
     path:"/detial",

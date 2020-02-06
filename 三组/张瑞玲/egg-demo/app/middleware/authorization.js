@@ -1,4 +1,5 @@
-const whiteList = ['/login','/registry','/know/addknow'];
+const whiteList = ['/login','/registry','/know/add','/know/list','/know/update','/know/delete',
+'/file/add','/file/delete','/file/update','/file/list','/file/search'];
 const jwt = require('jsonwebtoken');
 
 module.exports = ()=>{

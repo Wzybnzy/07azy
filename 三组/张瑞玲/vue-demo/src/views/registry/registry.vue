@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import { registry } from "@/api/api.js";
+//import { registry } from "@/api/api.js";
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -28,7 +29,11 @@ export default {
   methods: {
     async onSubmit(){
       let {username,password}=this.form
-      let res=await registry('/api/registry',{
+      // let res=await registry({
+      //   username,
+      //   password
+      // })
+      let res =await axios.post('/api/registry',{
         username,
         password
       })

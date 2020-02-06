@@ -4,6 +4,9 @@
   <el-form-item label="名称">
     <el-input v-model="form.name"></el-input>
   </el-form-item>
+  <el-form-item label="">
+    <el-input v-model="form.job"></el-input>
+  </el-form-item>
   <el-form-item label="是否可见">
     <el-select v-model="form.region" placeholder="互联网是否可见">
       <el-option label="是" value="1"></el-option>
@@ -21,26 +24,34 @@
 </template>
 
 <script>
-import {addknow} from '@/api/api.js'
+//import {addknow} from '@/api/api.js'
+import axios from 'axios'
 export default {
   data() {
     return {
       form:{
          name:'',
-        desc:'',
-        region:''
+         desc:'',
+         region:'',
+         job:''
       }
     }
   },
   methods: {
     async onSubmit() {
-       let {name,region,desc} = this.form;
-       let res = await  addknow({
-           know_name:name,
+       let {name,region,desc,job} = this.form;
+      //  let res = await  addknow({
+      //      know_name:name,
+      //      know_info:desc,
+      //      isshow:region,
+      //      uid:JSON.parse(window.localStorage.user).uid
+      //  });
+      let res =await axios.post('/api/know/add',{
+            know_name:name,
            know_info:desc,
            isshow:region,
-           uid:JSON.parse(window.localStorage.user).uid
-       });
+            uid:job
+      })
        if(res.data.code == 1){ 
            this.$router.push({name:'know'});
        }

@@ -13,5 +13,8 @@ module.exports = app => {
  
   //新建知识库
   router.post('/know/add',controller.know.know.add);
+  router.get('/know/del',controller.know.know.del);
+  router.post('/know/edit',controller.know.know.edit);
+  router.post('/know/search',controller.know.know.search);
 };
 

@@ -26,6 +26,7 @@ methods: {
     let res=await httpAxios.post('/api/login',{name,pwd});
     console.log(res,"00000")
     if(res.data.code==1){
+      
       this.$router.push('/home');
     }else if(res.data.code==0){
       console.log('')
