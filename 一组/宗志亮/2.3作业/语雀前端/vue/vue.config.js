@@ -1,11 +1,5 @@
-module.exports={
-    devServer:{
-        proxy:{
-            '/api':{
-                target:'http://localhost:7001/',//目标地址
-                changeOrigin:true,//允许跨域
-                pathRewrite:{"^/api":""}//所有以api开头的替换成空
-            }
-        }
-    }
-}
+module.exports = {
+    devServer: {
+        proxy: 'http://localhost:7001/',
+    },
+};
