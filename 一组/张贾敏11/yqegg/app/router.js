@@ -12,4 +12,15 @@ module.exports = app => {
 
   //登录
   router.post("/login",controller.user.user.login)
+
+  //查询
+  router.get("/list",controller.zs.zs.list)
+
+  //添加
+  router.post("/add",controller.zs.zs.add)
+
+  //删除
+  router.get("/del",controller.zs.zs.del)
+//编辑
+  router.post("/updata",controller.zs.zs.updata)
 };

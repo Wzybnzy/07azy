@@ -2,6 +2,9 @@
 
 const Controller = require('egg').Controller;
 
+//需要下包
+const jwt=require('jsonwebtoken');
+
 const createRule = {//校验需要下一个包egg-validate
     name: {
       type: 'string',
@@ -85,16 +88,23 @@ class UserController extends Controller {
               mes:"用户名没有注册过，请先注册在登录"
           }
           return
+        
       }
       
-    //登录 
-    let res=await ctx.service.user.user.login(name,pwd)
+    //登录 +
+    let res=await ctx.service.user.user.login(name,ctx.helper.help(pwd))
 
+    let token=jwt.sign({...res[0]},this.app.config.keys,{expiresIn:'6h'});
+    console.log(token,"5555555555")
     if(res.length>0){
         ctx.body={
             code:1,
-            token:"1111111",
-            mes:"登录成功"
+            mes:"登录成功",
+            data:{
+                token:token,
+                uid:res[0].id,
+                name:name
+            }
         }
     }else{
         ctx.body={
