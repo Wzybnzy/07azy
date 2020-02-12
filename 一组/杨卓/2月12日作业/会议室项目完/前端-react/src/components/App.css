@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+html,body,#root,.app{
+    width: 100%;
+    height: 100%;
+}
+/* 登录 */
+.login-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-main>div{
+    margin:50px 0;
+}
+.login-main>div>span{
+    margin-right: 20px;
+}
+.login-main>div>input{
+    width: 200px;
+    height: 30px;
+}
+.login-main>div>button{
+    padding: 5px 10px;
+    background-color: lightskyblue;
+    border: 0;
+    outline: 0;
+    color: #fff;
+}
+/* 注册 */
+.register-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-main>div{
+    margin:50px 0;
+}
+.register-main>div>span{
+    margin-right: 20px;
+}
+.register-main>div>input{
+    width: 200px;
+    height: 30px;
+}
+.register-main>div>button{
+    padding: 5px 10px;
+    background-color: lightskyblue;
+    border: 0;
+    outline: 0;
+    color: #fff;
+}
+/* 首页 */
+.home-page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.home-page>header{
+    width: 100%;
+    height:60px;
+    background-color: rgb(230,230,230);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.home-page>header>div>input{
+    width: 300px;
+    text-align: center;
+}
+.home-page>.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.home-page>.wrapper>.home-left{
+    flex:2;
+    border-right: 1px solid #ccc;
+}
+.home-page>.wrapper>.home-right{
+    flex:7;
+    display: flex;
+    justify-content: center;
+}
+.home-page>.wrapper>.home-left>p{
+    line-height: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+.home-page>.wrapper>.home-left>p:hover{
+    background-color: lightskyblue;
+    color: #fff;
+    border-right: 3px solid blue;
+}
