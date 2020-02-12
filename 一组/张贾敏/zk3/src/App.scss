@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html, body, #root, .wrap {
+    width: 100%;
+    height: 100%;
+}
+.home-page {
+    display: flex;
+    flex-direction: column;
+    main {
+        flex: 1;
+        overflow: hidden;
+    }
+    footer {
+        height: 50px;
+        line-height: 50px;
+        border-top: 1px solid;
+        display: flex;
+        a {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: #333333;
+            &.active {
+                color: red;
+            }
+        }
+    }
+}
+.list-page {
+    overflow: auto;
+    .group {
+        h2 {
+            line-height: 45px;
+            background: #cccccc;
+        }
+        p {
+            border-bottom: 1px solid;
+            line-height: 50px;
+        }
+    }
+    .nav {
+        position: fixed;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        background: rgba($color: #000000, $alpha: 0.5);
+        text-align: center;
+        color: #ffffff;
+        padding: 10px 0;
+        border-radius: 15px;
+    }
+    .car {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        .mark {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba($color: #000000, $alpha: 0.5);
+            top: 0;
+            left: 0;
+        }
+        .con {
+            width: 60%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            nav {
+                height: 50px;
+                border-bottom: 1px solid;
+            }
+            .inner {
+                flex: 1;
+            }
+        }
+    }
+}
