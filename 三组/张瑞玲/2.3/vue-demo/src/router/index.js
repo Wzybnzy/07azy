@@ -1,13 +1,19 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'  //
-import routes from './routerconfig'
-Vue.use(VueRouter) // 注册了router-view,router-link  ,往原型上挂载了$router和$route
+import React from 'react'
+import {BrowserRouter,Switch,Route,Redirect} from 'react-router-dom'
+import Login from '../views/login';
+import Registry from '../views/registry';
+import Home from '../views/home/home';
 
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+function RootRouter(){
+    return <BrowserRouter>
+        <Switch>
+            <Route path="/login" component={Login}/>
+            <Route path="/registry" component={Registry}/>
+            <Route path="/home" component={Home}/>
+            <Redirect path="/" to="/login"/>
+        </Switch>
+    </BrowserRouter>
+}
 
-export default router
+export default RootRouter;
