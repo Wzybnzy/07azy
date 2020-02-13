@@ -2,7 +2,7 @@
 
 const Controller = require('egg').Controller;
 const createRule = {
-    name: {
+    name:{
         type: 'string',
     },
     pwd: {
@@ -98,14 +98,38 @@ class UserController extends Controller {
                 mes: "参数错误"
             }
         }
-
     }
     async getuser(){
         const {ctx}=this;
         let {uid}=ctx.query;
-
         let res=await ctx.service.user.user.getmes(uid);
         ctx.body=res
+    }
+    async getuserinfo(){
+        let {ctx}=this;
+        let {uid}=ctx.query;
+        if(!uid){
+            ctx.body={
+                code:4,
+                msg:"缺少参数"
+            }
+            return;
+        }
+        let res=await ctx.service.user.user.getuserinfo(uid)
+        ctx.body=res[0];
+    }
+    async getlist(){
+        let {ctx}=this;
+        let {uid}=ctx.query;
+        if(!uid){
+            ctx.body={
+                code:4,
+                msg:"缺少参数"
+            }
+            return;
+        }
+        let res=await ctx.service.user.user.getlist(uid)
+        ctx.body=res;
     }
 }
 
