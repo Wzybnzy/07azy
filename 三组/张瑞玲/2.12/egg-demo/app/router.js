@@ -6,8 +6,9 @@
 module.exports = app => {
   const { router, controller } = app;
   router.get('/', controller.home.index);
-
   router.post('/login',controller.user.login)
   router.post('/registry',controller.user.registry)
-  router.post('/add',controller.list.add)
+  router.post('/addlist',controller.list.add)
+  router.get('/dellist',controller.list.dellist);
+  router.get('/list',controller.list.getlist);
 };
