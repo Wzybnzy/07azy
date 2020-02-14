@@ -1,0 +1,49 @@
+@import '~antd/dist/antd.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html,
+body,
+#root,
+.App,
+.App>div {
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form>input {
+  width: 80%;
+  height: 45px;
+  margin: 15px 0;
+}
+
+.form>input:first-child {
+  margin-top: 40px;
+}
+
+.form>button {
+  width: 20%;
+  margin-bottom: 15px;
+}
+
+.home .ant-table-tbody button {
+  width: 55px;
+  font-size: 12px;
+  margin: 3px;
+  padding: 0 3px;
+}
