@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+html,body,#root,.app{
+    width: 100%;
+    height: 100%;
+}
+/* 登录 */
+.login-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-main>.login-main-main{
+    background-color: rgb(75,68,69);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 500px;
+}
+.login-main-main>div{
+    line-height: 80px;
+}
+.login-main-main>div>input{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+.login-main-main>div>button{
+    width: 300px;
+    height: 35px;
+    line-height: 35px;
+    background-color: rgb(74,74,127);
+    border: 0;
+    outline: 0;
+    color: #fff;
+    border-radius: 10px;
+}
+/* 注册 */
+.register-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register-main>.register-main-main{
+    background-color: rgb(75,68,69);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 500px;
+}
+.register-main-main>div{
+    line-height: 80px;
+}
+.register-main-main>div>input{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.register-main-main>div>button{
+    width: 300px;
+    height: 35px;
+    line-height: 35px;
+    background-color: rgb(74,74,127);
+    border: 0;
+    outline: 0;
+    color: #fff;
+    border-radius: 10px;
+}
+/* 首页 */
+.home-{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.home-head{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 50px;
+}
+.home-head>div:nth-child(2)>span{
+    padding:10px 20px;
+    border-radius:20px;
+    margin:0 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.home-head>div:nth-child(2)>span:nth-child(1){
+    background-color: rgb(9,184,96);
+}
+.home-head>div:nth-child(2)>span:nth-child(2){
+    background-color: rgb(255,119,119);
+}
+.ant-modal-body>p>input{
+    width: 140px;
+    height: 25px;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 0;
+    outline: 0;
+    background-color: rgb(232,240,254);
+    margin: 10px 15px 10px 0;
+}
+.ant-modal-body>p>.inp4{
+    width: 300px;
+}
+.ant-modal-body>div>.input{
+    width: 210px;
+    height: 25px;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 0;
+    outline: 0;
+    background-color: rgb(232,240,254);
+    margin: 10px 15px 10px 10px;
+}
+.ant-modal-body>p>b{
+    display: inline-block;
+    background-color: rgb(119,133,234);
+    border-radius: 15px;
+    padding:5px 10px;
+    margin: 4px;
+    color: #fff;
+    cursor: pointer;
+}
