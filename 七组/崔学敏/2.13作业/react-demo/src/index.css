@@ -1,0 +1,29 @@
+
+*{
+  padding: 0;
+  margin: 0;
+  list-style:none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body,html,#root,.wrap{
+  width:100%;
+  height:100%;
+}
+.login,.registry,.home{
+  width:100%;
+  height:100%;
+}
+.login .cont,.registry .cont {
+  width:260px;
+  height:400px;
+  margin: 50px auto;
+  text-align: center;
+}
+.login .cont button,.registry .cont button{
+  margin-top: 10px;
+}
+.home .header{
+  width:100%;
+  text-align: center;
+}
